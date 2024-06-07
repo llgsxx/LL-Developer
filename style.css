@@ -1,0 +1,1144 @@
+  /* Reset e configurações gerais */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fira code', sans-serif;
+    color: white;
+  }
+  .rubik-mono-one-regular {
+    font-family: "Rubik Mono One", monospace;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  /* Estilos para o body */
+  body {
+    background: #232526;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #000000, #232526);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #0a0a0a, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    height: 100vh;
+  }
+
+  /* Configurações da interface */
+  .interface {
+    max-width: 1280px;
+    margin: 0 auto;
+    
+  }
+  .logo img{
+    margin-left: -100px;
+    width: 100%;
+    height: 250px;
+    display: flex;
+    box-shadow: white;
+    
+
+  }
+
+  /* Estilos para elementos flexíveis */
+  .flex {
+    display: flex;
+    gap: 20px;
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+  }
+  
+  /* Estilo do botão */
+  .btn-contato {
+    padding: 15px 25px;
+    border: none;
+    outline: none;
+    color: rgb(255, 255, 255);
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    font-size: 9px;
+  }
+
+  .btn-contato:before {
+    content: "";
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowingbn5 20s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
+  }
+
+  @keyframes glowingbn5 {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+  }
+
+  .btn-contato:active {
+    color: #ffffff;
+  }
+
+  .btn-contato:active:after {
+    background: transparent;
+  }
+
+  .btn-contato:hover:before {
+    opacity: 1;
+  }
+
+  .btn-contato:after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #191919;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+  }
+
+  /* Estilos para hover de botão */
+  button:hover,
+  form .btn-enviar input:hover {
+    box-shadow: 0px 0px 8px #8C8C8C;
+    transform: scale(1.05);
+  }
+
+  /* Estilos para o título */
+  h2.titulo {
+    color: white;
+    font-size: 38px;    
+
+  }
+
+  /* Estilos para cabeçalho */
+  header {
+    padding: 80px;
+  }
+
+  header > .interface {
+    display: flex;
+    align-items: center;
+  }
+
+  header a {
+    color: #e0e0e0;
+    text-decoration: none;
+    display: inline-block;
+    transition: .2s;
+    
+  }
+
+  header nav ul {
+    list-style-type: none;
+  }
+
+  header nav ul li {
+    display: inline-block;
+    padding: 0 40px;
+  }
+
+  header a:hover {
+    color: #0D0D0D;
+    transform: scale(1.05);
+  }
+
+  /* Seção Topo do Site */
+  section.topo-do-site {
+    padding: 100px 4%;
+    position: center;
+  
+  }
+  section.topo-do-site .flex {
+    align-items: center;
+    justify-content: left;
+    
+    
+  }
+
+  .topo-do-site h1 {
+    color: white;
+    font-size: 45px;
+    margin-bottom: 100px;
+    text-align: center;
+  }
+
+  .wrapper {
+    position: absolute;
+    top: 80%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+  }
+
+  .line {
+    position: absolute;
+    top: 0px;
+    width: 2px;
+    height: 8px;
+    background-color: red;
+  }
+
+  .circle {
+    position: absolute;
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: blue;
+  }
+
+  .circle-top {
+    top: 0px;
+    left: -3.5px;
+  }
+
+  .circle-bottom {
+    bottom: 0px;
+    left: -3.5px;
+  }
+
+  .dot {
+    position: absolute;
+    display: block;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    left: -1.5px;
+  }
+
+    
+        .line1{
+          margin-left: 0px;
+          background-color: #2410CB;
+          -webkit-animation: line 2s cubic-bezier(0.250, 0, 0.705, 1) infinite;
+          animation: line 2s cubic-bezier(0.250, 0, 0.705, 1) infinite;
+        }
+        .line1 > span{
+          background-color: #D4141E;
+        }
+        .line1 > .dotted > .dot{
+          background-color: #D4141E;
+        }
+        .line1 > .dotted > .dot-top{
+          top: 0px;
+          -webkit-animation: dot-top 2s cubic-bezier(0.250, 0, 0.705, 1) infinite;
+          animation: dot-top 2s cubic-bezier(0.250, 0, 0.705, 1) infinite;
+        }
+        .line1 > .dotted > .dot-bottom{
+          bottom: 0px;
+          -webkit-animation: dot-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) infinite;
+          animation: dot-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) infinite;
+        }
+        .line1 > .dotted > .dot-middle-top{
+          top: 0px;
+          -webkit-animation: dot-middle-top 2s cubic-bezier(0.250, 0, 0.705, 1) infinite;
+          animation: dot-middle-top 2s cubic-bezier(0.250, 0, 0.705, 1) infinite;
+        }
+        .line1 > .dotted > .dot-middle-bottom{
+          bottom: 0px;
+          -webkit-animation: dot-middle-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) infinite;
+          animation: dot-middle-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) infinite;
+        }
+    
+        .line2{
+          margin-left: 35px;
+          background-color: #852DF4;
+          -webkit-animation: line 2s cubic-bezier(0.250, 0, 0.705, 1) .05s infinite;
+          animation: line 2s cubic-bezier(0.250, 0, 0.705, 1) .05s infinite;
+        }
+        .line2 > span{
+          background-color: #FC7E48;
+        }
+        .line2 > .dotted > .dot{
+          background-color: #FC7E48;
+        }
+        .line2 > .dotted > .dot-top{
+          top: 0px;
+          -webkit-animation: dot-top 2s cubic-bezier(0.250, 0, 0.705, 1) .05s infinite;
+          animation: dot-top 2s cubic-bezier(0.250, 0, 0.705, 1) .05s infinite;
+        }
+        .line2 > .dotted > .dot-bottom{
+          bottom: 0px;
+          -webkit-animation: dot-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .05s infinite;
+          animation: dot-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .05s infinite;
+        }
+        .line2 > .dotted > .dot-middle-top{
+          top: 0px;
+          -webkit-animation: dot-middle-top 2s cubic-bezier(0.250, 0, 0.705, 1) .05s infinite;
+          animation: dot-middle-top 2s cubic-bezier(0.250, 0, 0.705, 1) .05s infinite;
+        }
+        .line2 > .dotted > .dot-middle-bottom{
+          bottom: 0px;
+          -webkit-animation: dot-middle-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .05s infinite;
+          animation: dot-middle-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .05s infinite;
+        }
+    
+        .line3{
+          margin-left: 70px;
+          background-color: #F42DF1;
+          -webkit-animation: line 2s cubic-bezier(0.250, 0, 0.705, 1) .1s infinite;
+          animation: line 2s cubic-bezier(0.250, 0, 0.705, 1) .1s infinite;
+        }
+        .line3 > span{
+          background-color: #EDEB29;
+        }
+        .line3 > .dotted > .dot{
+          background-color: #EDEB29;
+        }
+        .line3 > .dotted > .dot-top{
+          top: 0px;
+          -webkit-animation: dot-top 2s cubic-bezier(0.250, 0, 0.705, 1) .1s infinite;
+          animation: dot-top 2s cubic-bezier(0.250, 0, 0.705, 1) .1s infinite;
+        }
+        .line3 > .dotted > .dot-bottom{
+          bottom: 0px;
+          -webkit-animation: dot-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .1s infinite;
+          animation: dot-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .1s infinite;
+        }
+        .line3 > .dotted > .dot-middle-top{
+          top: 0px;
+          -webkit-animation: dot-middle-top 2s cubic-bezier(0.250, 0, 0.705, 1) .1s infinite;
+          animation: dot-middle-top 2s cubic-bezier(0.250, 0, 0.705, 1) .1s infinite;
+        }
+        .line3 > .dotted > .dot-middle-bottom{
+          bottom: 0px;
+          -webkit-animation: dot-middle-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .1s infinite;
+          animation: dot-middle-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .1s infinite;
+        }
+    
+        .line4{
+          margin-left: 105px;
+          background-color: #F91396;
+          -webkit-animation: line 2s cubic-bezier(0.250, 0, 0.705, 1) .15s infinite;
+          animation: line 2s cubic-bezier(0.250, 0, 0.705, 1) .15s infinite;
+        }
+        .line4 > span{
+          background-color: #ACED29;
+        }
+        .line4 > .dotted > .dot{
+          background-color: #ACED29;
+        }
+        .line4 > .dotted > .dot-top{
+          top: 0px;
+          -webkit-animation: dot-top 2s cubic-bezier(0.250, 0, 0.705, 1) .15s infinite;
+          animation: dot-top 2s cubic-bezier(0.250, 0, 0.705, 1) .15s infinite;
+        }
+        .line4 > .dotted > .dot-bottom{
+          bottom: 0px;
+          -webkit-animation: dot-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .15s infinite;
+          animation: dot-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .15s infinite;
+        }
+        .line4 > .dotted > .dot-middle-top{
+          top: 0px;
+          -webkit-animation: dot-middle-top 2s cubic-bezier(0.250, 0, 0.705, 1) .15s infinite;
+          animation: dot-middle-top 2s cubic-bezier(0.250, 0, 0.705, 1) .15s infinite;
+        }
+        .line4 > .dotted > .dot-middle-bottom{
+          bottom: 0px;
+          -webkit-animation: dot-middle-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .15s infinite;
+          animation: dot-middle-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .15s infinite;
+        }
+    
+        .line5{
+          margin-left: 140px;
+          background-color: #D4141E;
+          -webkit-animation: line 2s cubic-bezier(0.250, 0, 0.705, 1) .2s infinite;
+          animation: line 2s cubic-bezier(0.250, 0, 0.705, 1) .2s infinite;
+        }
+        .line5 > span{
+          background-color: #4EF02B;
+        }
+        .line5 > .dotted > .dot{
+          background-color: #4EF02B;
+        }
+        .line5 > .dotted > .dot-top{
+          top: 0px;
+          -webkit-animation: dot-top 2s cubic-bezier(0.250, 0, 0.705, 1) .2s infinite;
+          animation: dot-top 2s cubic-bezier(0.250, 0, 0.705, 1) .2s infinite;
+        }
+        .line5 > .dotted > .dot-bottom{
+          bottom: 0px;
+          -webkit-animation: dot-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .2s infinite;
+          animation: dot-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .2s infinite;
+        }
+        .line5 > .dotted > .dot-middle-top{
+          top: 0px;
+          -webkit-animation: dot-middle-top 2s cubic-bezier(0.250, 0, 0.705, 1) .2s infinite;
+          animation: dot-middle-top 2s cubic-bezier(0.250, 0, 0.705, 1) .2s infinite;
+        }
+        .line5 > .dotted > .dot-middle-bottom{
+          bottom: 0px;
+          -webkit-animation: dot-middle-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .2s infinite;
+          animation: dot-middle-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .2s infinite;
+        }
+    
+        .line6{
+          margin-left: 175px;
+          background-color: #FC7E48;
+          -webkit-animation: line 2s cubic-bezier(0.250, 0, 0.705, 1) .25s infinite;
+          animation: line 2s cubic-bezier(0.250, 0, 0.705, 1) .25s infinite;
+        }
+        .line6 > span{
+          background-color: #38E790;
+        }
+        .line6 > .dotted > .dot{
+          background-color: #38E790;
+        }
+        .line6 > .dotted > .dot-top{
+          top: 0px;
+          -webkit-animation: dot-top 2s cubic-bezier(0.250, 0, 0.705, 1) .25s infinite;
+          animation: dot-top 2s cubic-bezier(0.250, 0, 0.705, 1) .25s infinite;
+        }
+        .line6 > .dotted > .dot-bottom{
+          bottom: 0px;
+          -webkit-animation: dot-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .25s infinite;
+          animation: dot-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .25s infinite;
+        }
+        .line6 > .dotted > .dot-middle-top{
+          top: 0px;
+          -webkit-animation: dot-middle-top 2s cubic-bezier(0.250, 0, 0.705, 1) .25s infinite;
+          animation: dot-middle-top 2s cubic-bezier(0.250, 0, 0.705, 1) .25s infinite;
+        }
+        .line6 > .dotted > .dot-middle-bottom{
+          bottom: 0px;
+          -webkit-animation: dot-middle-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .25s infinite;
+          animation: dot-middle-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .25s infinite;
+        }
+    
+        .line7{
+          margin-left: 210px;
+          background-color: #EDEB29;
+          -webkit-animation: line 2s cubic-bezier(0.250, 0, 0.705, 1) .3s infinite;
+          animation: line 2s cubic-bezier(0.250, 0, 0.705, 1) .3s infinite;
+        }
+        .line7 > span{
+          background-color: #25EACC;
+        }
+        .line7 > .dotted > .dot{
+          background-color: #25EACC;
+        }
+        .line7 > .dotted > .dot-top{
+          top: 0px;
+          -webkit-animation: dot-top 2s cubic-bezier(0.250, 0, 0.705, 1) .3s infinite;
+          animation: dot-top 2s cubic-bezier(0.250, 0, 0.705, 1) .3s infinite;
+        }
+        .line7 > .dotted > .dot-bottom{
+          bottom: 0px;
+          -webkit-animation: dot-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .3s infinite;
+          animation: dot-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .3s infinite;
+        }
+        .line7 > .dotted > .dot-middle-top{
+          top: 0px;
+          -webkit-animation: dot-middle-top 2s cubic-bezier(0.250, 0, 0.705, 1) .3s infinite;
+          animation: dot-middle-top 2s cubic-bezier(0.250, 0, 0.705, 1) .3s infinite;
+        }
+        .line7 > .dotted > .dot-middle-bottom{
+          bottom: 0px;
+          -webkit-animation: dot-middle-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .3s infinite;
+          animation: dot-middle-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .3s infinite;
+        }
+    
+        .line8{
+          margin-left: 245px;
+          background-color: #ACED29;
+          -webkit-animation: line 2s cubic-bezier(0.250, 0, 0.705, 1) .35s infinite;
+          animation: line 2s cubic-bezier(0.250, 0, 0.705, 1) .35s infinite;
+        }
+        .line8 > span{
+          background-color: #309CDF;
+        }
+        .line8 > .dotted > .dot{
+          background-color: #309CDF;
+        }
+        .line8 > .dotted > .dot-top{
+          top: 0px;
+          -webkit-animation: dot-top 2s cubic-bezier(0.250, 0, 0.705, 1) .35s infinite;
+          animation: dot-top 2s cubic-bezier(0.250, 0, 0.705, 1) .35s infinite;
+        }
+        .line8 > .dotted > .dot-bottom{
+          bottom: 0px;
+          -webkit-animation: dot-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .35s infinite;
+          animation: dot-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .35s infinite;
+        }
+        .line8 > .dotted > .dot-middle-top{
+          top: 0px;
+          -webkit-animation: dot-middle-top 2s cubic-bezier(0.250, 0, 0.705, 1) .35s infinite;
+          animation: dot-middle-top 2s cubic-bezier(0.250, 0, 0.705, 1) .35s infinite;
+        }
+        .line8 > .dotted > .dot-middle-bottom{
+          bottom: 0px;
+          -webkit-animation: dot-middle-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .35s infinite;
+          animation: dot-middle-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .35s infinite;
+        }
+    
+        .line9{
+          margin-left: 280px;
+          background-color: #4EF02B;
+          -webkit-animation: line 2s cubic-bezier(0.250, 0, 0.705, 1) .4s infinite;
+          animation: line 2s cubic-bezier(0.250, 0, 0.705, 1) .4s infinite;
+        }
+        .line9 > span{
+          background-color: #2544E7;
+        }
+        .line9 > .dotted > .dot{
+          background-color: #2544E7;
+        }
+        .line9 > .dotted > .dot-top{
+          top: 0px;
+          -webkit-animation: dot-top 2s cubic-bezier(0.250, 0, 0.705, 1) .4s infinite;
+          animation: dot-top 2s cubic-bezier(0.250, 0, 0.705, 1) .4s infinite;
+        }
+        .line9 > .dotted > .dot-bottom{
+          bottom: 0px;
+          -webkit-animation: dot-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .4s infinite;
+          animation: dot-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .4s infinite;
+        }
+        .line9 > .dotted > .dot-middle-top{
+          top: 0px;
+          -webkit-animation: dot-middle-top 2s cubic-bezier(0.250, 0, 0.705, 1) .4s infinite;
+          animation: dot-middle-top 2s cubic-bezier(0.250, 0, 0.705, 1) .4s infinite;
+        }
+        .line9 > .dotted > .dot-middle-bottom{
+          bottom: 0px;
+          -webkit-animation: dot-middle-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .4s infinite;
+          animation: dot-middle-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .4s infinite;
+        }
+    
+        .line10{
+          margin-left: 315px;
+          background-color: #38E790;
+          -webkit-animation: line 2s cubic-bezier(0.250, 0, 0.705, 1) .45s infinite;
+          animation: line 2s cubic-bezier(0.250, 0, 0.705, 1) .45s infinite;
+        }
+        .line10 > span{
+          background-color: #852DF4;
+        }
+        .line10 > .dotted > .dot{
+          background-color: #852DF4;
+        }
+        .line10 > .dotted > .dot-top{
+          top: 0px;
+          -webkit-animation: dot-top 2s cubic-bezier(0.250, 0, 0.705, 1) .45s infinite;
+          animation: dot-top 2s cubic-bezier(0.250, 0, 0.705, 1) .45s infinite;
+        }
+        .line10 > .dotted > .dot-bottom{
+          bottom: 0px;
+          -webkit-animation: dot-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .45s infinite;
+          animation: dot-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .45s infinite;
+        }
+        .line10 > .dotted > .dot-middle-top{
+          top: 0px;
+          -webkit-animation: dot-middle-top 2s cubic-bezier(0.250, 0, 0.705, 1) .45s infinite;
+          animation: dot-middle-top 2s cubic-bezier(0.250, 0, 0.705, 1) .45s infinite;
+        }
+        .line10 > .dotted > .dot-middle-bottom{
+          bottom: 0px;
+          -webkit-animation: dot-middle-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .45s infinite;
+          animation: dot-middle-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .45s infinite;
+        }
+    
+        .line11{
+          margin-left: 350px;
+          background-color: #25EACC;
+          -webkit-animation: line 2s cubic-bezier(0.250, 0, 0.705, 1) .5s infinite;
+          animation: line 2s cubic-bezier(0.250, 0, 0.705, 1) .5s infinite;
+        }
+        .line11 > span{
+          background-color: #F42DF1;
+        }
+        .line11 > .dotted > .dot{
+          background-color: #F42DF1;
+        }
+        .line11 > .dotted > .dot-top{
+          top: 0px;
+          -webkit-animation: dot-top 2s cubic-bezier(0.250, 0, 0.705, 1) .5s infinite;
+          animation: dot-top 2s cubic-bezier(0.250, 0, 0.705, 1) .5s infinite;
+    
+        }
+        .line11 > .dotted > .dot-bottom{
+          bottom: 0px;
+          -webkit-animation: dot-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .5s infinite;
+          animation: dot-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .5s infinite;
+        }
+        .line11 > .dotted > .dot-middle-top{
+          top: 0px;
+          -webkit-animation: dot-middle-top 2s cubic-bezier(0.250, 0, 0.705, 1) .5s infinite;
+          animation: dot-middle-top 2s cubic-bezier(0.250, 0, 0.705, 1) .5s infinite;
+        }
+        .line11 > .dotted > .dot-middle-bottom{
+          bottom: 0px;
+          -webkit-animation: dot-middle-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .5s infinite;
+          animation: dot-middle-bottom 2s cubic-bezier(0.250, 0, 0.705, 1) .5s infinite;
+        }
+    
+        @-webkit-keyframes line{
+          0%{height: 4px; top: 0px; left: 0px; -webkit-transform: rotate(-65deg)}
+          10%{height: 220px; top: -110px; left: 15px;}
+          45%{height: 200px; top: -100px; left: 25px;}
+          70%{height: 8px; top: 0px; left: 25px; -webkit-transform: rotate(0deg);}
+          100%{height: 8px; top: 0px; left: 15px; -webkit-transform: rotate(0deg);}
+        }
+        @-webkit-keyframes dot-top{
+          0%{top: -30px}
+          10%{top: -30px;}
+          45%{top: -25px;}
+          60%{top: 0px;}
+          100%{top: 0px;}
+        }
+        @-webkit-keyframes dot-bottom{
+          0%{bottom: -30px}
+          10%{bottom: -30px;}
+          45%{bottom: -25px;}
+          60%{bottom: 0px;}
+          100%{bottom: 0px;}
+        }
+        @-webkit-keyframes dot-middle-top{
+          0%{}
+          10%{}
+          45%{top: 98px;}
+          70%{top: -50px;}
+          85%{top: 0px;}
+          100%{top: 0px;}
+        }
+        @-webkit-keyframes dot-middle-bottom{
+          0%{}
+          10%{}
+          45%{bottom: 98px;}
+          70%{bottom: -50px;}
+          85%{bottom: 0px;}
+          100%{bottom: 0px;}
+        }
+        
+        @keyframes line{
+          0%{height: 4px; top: 0px; left: 0px; transform: rotate(-65deg)}
+          10%{height: 220px; top: -110px; left: 15px;}
+          45%{height: 200px; top: -100px; left: 25px;}
+          70%{height: 8px; top: 0px; left: 25px; transform: rotate(0deg);}
+          100%{height: 8px; top: 0px; left: 15px; transform: rotate(0deg);}
+        }
+        @keyframes dot-top{
+          0%{top: -30px}
+          10%{top: -30px;}
+          45%{top: -25px;}
+          60%{top: 0px;}
+          100%{top: 0px;}
+        }
+        @keyframes dot-bottom{
+          0%{bottom: -30px}
+          10%{bottom: -30px;}
+          45%{bottom: -25px;}
+          60%{bottom: 0px;}
+          100%{bottom: 0px;}
+        }
+        @keyframes dot-middle-top{
+          0%{}
+          10%{}
+          45%{top: 78px;}
+          70%{top: -50px;}
+          85%{top: 0px;}
+          100%{top: 0px;}
+        }
+        @keyframes dot-middle-bottom{
+          0%{}
+          10%{}
+          45%{bottom: 78px;}
+          70%{bottom: -50px;}
+          85%{bottom: 0px;}
+          100%{bottom: 0px;}
+        }
+/* Configurações da interface */
+  .interface {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  /* Estilos para elementos flexíveis */
+  .flex {
+    display: flex;
+  }
+
+  /* Estilo do botão */
+  .btn-contato {
+    padding: 15px 25px;
+    border: none;
+    outline: none;
+    color: rgb(255, 255, 255);
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    font-size: 16px;
+  }
+
+  .btn-contato:before {
+    content: "";
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowingbn5 20s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
+  }
+
+  @keyframes glowingbn5 {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+  }
+
+  .btn-contato:active {
+    color: #ffffff;
+  }
+
+  .btn-contato:active:after {
+    background: transparent;
+  }
+
+  .btn-contato:hover:before {
+    opacity: 1;
+  }
+
+  .btn-contato:after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #191919;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+  }
+
+  /* Estilos para hover de botão */
+  button:hover,
+  form .btn-enviar input:hover {
+    box-shadow: 0px 0px 8px #8C8C8C;
+    transform: scale(1.05);
+  }
+
+  /* Estilos para o título */
+  h2.titulo {
+    color: white;
+    font-size: 38px;    
+    text-align: center;
+    margin-bottom: 100px;
+  }
+
+  h2.titulo span {
+    color: white;
+  }
+
+  /* Estilos para cabeçalho */
+  header {
+    padding: 20px 4%;
+  }
+
+  header > .interface {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  header a {
+    color: #e0e0e0;
+    text-decoration: none;
+    display: inline-block;
+    transition: .2s;
+  }
+
+  header nav ul {
+    list-style-type: none;
+  }
+
+  header nav ul li {
+    display: inline-block;
+    padding: 0 40px;
+  }
+
+  header a:hover {
+    color: white;
+    transform: scale(1.05);
+  }
+
+  /* Seção Topo do Site */
+  section.topo-do-site {
+    padding: 150px 4%;
+    
+  }
+
+  section.topo-do-site .flex {
+    align-items: center;
+    justify-content: left;
+  }
+
+  .topo-do-site h1 {
+    color: white;
+    font-size: 45px;
+  }
+  .topo-do-site p{
+    font-size: 20px;
+    text-align: left;
+    margin-top: 30px;
+
+  }
+
+  /* Seção Sobre */
+  section.sobre {
+    padding: 150px 3%;
+    color: white;
+  }
+
+  section.sobre .flex {
+    align-items: center;
+    gap: 190px;
+  }
+
+  .sobre .txt-sobre {
+    color: white;
+  }
+
+  .sobre .txt-sobre h2 {
+    font-size: 40px;
+    line-height: 40px;
+    margin-bottom: 60px;
+    color: white;
+  }
+
+  .sobre .txt-sobre h2 span {
+    color: white;
+    display: block;
+  }
+
+  .sobre .txt-sobre p {
+    margin: 40px 0;
+    text-align: justify;
+  }
+
+  .img-sobre img {
+    width: 300px;
+    height:100%;
+    border: 1px solid #0d0d0d;
+    border-radius: 15px;
+    transition: all 0.3s ease-in-out;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    box-shadow: rgba(211, 211, 211, 0.116) 0px 10px 20px -7px;
+  }
+
+  .img-sobre img:hover {
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+  }
+
+  .btn-social button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 0;
+    background-color: black;
+    font-size: 22px;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: .2s;
+    color: #ffffff;
+  }
+  .btn-social button i {
+    color: white;
+  }
+
+  /* Seção Especialidades */
+  section.especialidades {
+    padding: 100px 4%;
+}
+
+section.especialidades .flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between; /* Para espaçar igualmente os elementos */
+    margin-top: 50px;
+}
+
+section.especialidades .especialidades-box {
+  width: 320px; /* Largura padrão */
+  height: 360px; /* Altura padrão */
+  color: white;
+  padding: 20px 10px; /* Ajuste do padding para melhor espaçamento interno */
+  border: 2px solid rgba(255, 255, 255, 0.425);
+  border-radius: 20px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-align: left;
+  flex: 0 0 calc(25% - 20px); /* Quatro elementos por linha */
+  max-width: calc(25% - 20px); /* Garante que cada elemento tenha o mesmo tamanho */
+  box-sizing: border-box;
+}
+
+section.especialidades .especialidades-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #BFBFBF;
+}
+
+section.especialidades .especialidades-box i {
+    font-size: 50px; /* Redução do tamanho do ícone */
+    color: #0D0D0D;
+}
+
+section.especialidades .especialidades-box h3 {
+    font-size: 28px;
+    margin: 15px 0;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 1200px) {
+    section.especialidades .especialidades-box {
+        flex: 0 0 calc(33.333% - 20px); /* Três elementos por linha */
+        max-width: calc(33.333% - 20px);
+    }
+}
+
+@media (max-width: 992px) {
+    section.especialidades .especialidades-box {
+        flex: 0 0 calc(50% - 20px); /* Dois elementos por linha */
+        max-width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    section.especialidades .especialidades-box {
+        flex: 0 0 calc(50% - 20px); /* Dois elementos por linha */
+        max-width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 576px) {
+    section.especialidades .especialidades-box {
+        flex: 0 0 100%; /* Um elemento por linha */
+        max-width: 100%;
+    }
+}
+
+
+
+
+  .img-port {
+    width: 360px;
+    height: 460px;
+    background-color: black;
+    background-size: cover;
+    background-position: 100% 0%;
+    transition: 8s;
+    cursor: pointer;
+    border-radius: 40px;
+    position: relative;
+  }
+
+  .img-port:hover {
+    background-position: 100% 100%;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #070707a8;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 600;
+    color: #F2F2F2;
+    opacity: 0;
+    transition: .5s;
+  }
+
+  .overlay:hover {
+    opacity: 1;
+  }
+
+  .overlay a {
+    text-decoration: none;
+  }
+
+  /* Seção Formulário de Contato */
+  section.formulario {
+    padding: 100px 4%;
+  }
+
+  form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 40px;
+  }
+
+  form input, form textarea {
+    width: 100%;
+    background-color: #07070777;
+    border: 0;
+    outline: 0;
+    padding: 20px 15px;
+    border-radius: 15px;
+    color: #f8f8f8;
+    font-size: 18px;
+  }
+
+  form textarea {
+    resize: none;
+    max-height: 500px;
+  }
+
+  form .btn-enviar {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  form .btn-enviar input {
+    width: 120px;
+    background-color: #0D0D0D;
+    color: #F2F2F2;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .2s;
+  }
+
+  /* Seção Rodapé */
+  footer {
+    padding: 50px 4%;
+    box-shadow: 0 0 40px 10px rgba(255, 255, 255, 0.137);
+  }
+  .logo-footer img{
+    width: 100%;
+    height: 150px;
+    
+  }
+
+  footer .flex {
+    justify-content: space-between;
+  }
+
+  footer .line-footer {
+    padding: 20px 0;
+  }
+
+  .borda {
+    border-top: 2px solid black;
+  }
+
+  footer .line-footer p i {
+    color: black;
+    font-size: 22px;
+    padding: 10px;
+  }
+
+  footer .line-footer p a {
+    color: #0D0D0D;
+  }
+
+  @media screen and (max-width: 1020px) {
+
+    /* Classes Gerais */
+    .flex {
+        flex-direction: column;
+    }
+
+    h2.titulo {
+        font-size: 34px;
+        line-height: 30px;
+    }
+
+    /* Cabeçalho */
+    .menu-desktop, .btn-contato {
+        display: none;
+    }
+    
+    /* Topo do site */
+    section.topo-do-site .flex {
+        gap: 40px;
+    }
+
+    section.topo-do-site {
+        padding: 20px 8%;
+    }
+
+    .topo-do-site h1 {
+        font-size: 30px;
+    }
+
+    /* Sobre */
+    section.sobre {
+        padding: 80px 8%;
+    }
+
+    .sobre .txt-sobre h2 {
+        font-size: 34px;
+        line-height: 35px;
+        text-align: center;
+    }
+
+    .btn-social {
+        text-align: center;
+    }
+
+    /* projetos */
+    section.projetos {
+        padding: 80px 8%;
+    }
+    .img-port {
+        width: 100%;
+        max-width: 360px;
+        margin: 0 auto;
+    }
+
+    section.projetos .flex {
+        gap: 50px;
+    }
+
+    /* Rodapé */
+    footer .flex {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    footer .line-footer {
+        text-align: center;
+    }
+    
+    line-footer-borda i{ 
+        color: white;
+    }
+  }
