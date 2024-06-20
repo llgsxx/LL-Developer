@@ -1,11 +1,12 @@
   /* Reset e configurações gerais */
-  * {
+   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Fira code', sans-serif;
     color: white;
   }
+  
   .rubik-mono-one-regular {
     font-family: "Rubik Mono One", monospace;
     font-weight: 400;
@@ -19,23 +20,21 @@
     background: linear-gradient(to right, #0a0a0a, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     height: 100vh;
   }
-
+  
   /* Configurações da interface */
   .interface {
     max-width: 1280px;
     margin: 0 auto;
-    
   }
-  .logo img{
+  
+  .logo img {
     margin-left: -100px;
     width: 100%;
     height: 250px;
     display: flex;
     box-shadow: white;
-    
-
   }
-
+  
   /* Estilos para elementos flexíveis */
   .flex {
     display: flex;
@@ -57,7 +56,7 @@
     border-radius: 10px;
     font-size: 9px;
   }
-
+  
   .btn-contato:before {
     content: "";
     background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
@@ -74,31 +73,31 @@
     transition: opacity 0.3s ease-in-out;
     border-radius: 10px;
   }
-
+  
   @keyframes glowingbn5 {
     0% {
-        background-position: 0 0;
+      background-position: 0 0;
     }
     50% {
-        background-position: 400% 0;
+      background-position: 400% 0;
     }
     100% {
-        background-position: 0 0;
+      background-position: 0 0;
     }
   }
-
+  
   .btn-contato:active {
     color: #ffffff;
   }
-
+  
   .btn-contato:active:after {
     background: transparent;
   }
-
+  
   .btn-contato:hover:before {
     opacity: 1;
   }
-
+  
   .btn-contato:after {
     z-index: -1;
     content: "";
@@ -110,20 +109,73 @@
     top: 0;
     border-radius: 10px;
   }
-
+  
   /* Estilos para hover de botão */
   button:hover,
   form .btn-enviar input:hover {
     box-shadow: 0px 0px 8px #8C8C8C;
     transform: scale(1.05);
   }
-
+  
   /* Estilos para o título */
   h2.titulo {
     color: white;
-    font-size: 38px;    
-
+    font-size: 38px;
   }
+  
+  /* Media queries para responsividade */
+  
+  /* Tablets */
+  @media (max-width: 768px) {
+    .interface {
+      padding: 0 20px;
+      text-align: center;
+    }
+  
+    .logo img {
+      height: 200px;
+      margin-left: -50px;
+    }
+  
+    .flex {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .btn-contato {
+      font-size: 12px;
+      padding: 10px 20px;
+    }
+  
+    h2.titulo {
+      font-size: 28px;
+      text-align: center;
+    }
+  }
+  
+  /* Smartphones */
+  @media (max-width: 480px) {
+    .interface {
+      padding: 0 10px;
+      text-align: center;
+    }
+  
+    .logo img {
+      height: 150px;
+      margin-left: -20px;
+    }
+  
+    .btn-contato {
+      font-size: 10px;
+      padding: 8px 15px;
+    }
+  
+    h2.titulo {
+      font-size: 24px;
+      text-align: center;
+    }
+  }
+  
 
   /* Estilos para cabeçalho */
   header {
@@ -660,6 +712,83 @@
           85%{bottom: 0px;}
           100%{bottom: 0px;}
         }
+
+/* Estilos para linha1 a linha11 */
+
+/* Media queries para diferentes tamanhos de tela */
+
+/* Telas grandes (desktop) */
+@media (min-width: 1200px) {
+  .wrapper {
+    top: 70%;
+    left: 50%;
+    margin-bottom: 100px;
+  }
+
+  .line {
+    width: 3px;
+    height: 10px;
+  }
+
+  .circle {
+    width: 12px;
+    height: 12px;
+  }
+
+  .dot {
+    width: 5px;
+    height: 5px;
+  }
+}
+
+/* Telas médias (tablet) */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .wrapper {
+    top: 75%;
+    left: 50%;
+    margin-bottom: 100px;
+  }
+
+  .line {
+    width: 2px;
+    height: 8px;
+  }
+
+  .circle {
+    width: 10px;
+    height: 10px;
+  }
+
+  .dot {
+    width: 4px;
+    height: 4px;
+  }
+}
+
+/* Telas pequenas (mobile) */
+@media (max-width: 767px) {
+  .wrapper {
+    top: 80%;
+    left: 5%;
+    margin-bottom: 100px;
+  }
+
+  .line {
+    width: 1px;
+    height: 6px;
+  }
+
+  .circle {
+    width: 8px;
+    height: 8px;
+  }
+
+  .dot {
+    width: 3px;
+    height: 3px;
+  }
+}
+
 /* Configurações da interface */
   .interface {
     max-width: 1280px;
