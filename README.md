@@ -1,2 +1,0 @@
-# LL-Developer
- Portfólio 
